@@ -1,0 +1,132 @@
+{% load static %}<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% block title %}Lumiere Clothing{% endblock %}</title>
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap/bootstrap.min.css' %}">
+  <link rel="stylesheet" href="{% static 'vendor/bootstrap-icons/bootstrap-icons.min.css' %}">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<div class="topbar text-center small py-2">
+  Free shipping on all U.S. orders &middot; 30-day returns
+</div>
+
+<nav class="navbar navbar-expand-lg bg-white border-bottom sticky-top">
+  <div class="container">
+    <a class="navbar-brand brand" href="{% url 'catalog:home' %}">LUMIERE</a>
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#mainNav" aria-controls="mainNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="mainNav">
+      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:home' %}">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="{% url 'catalog:list' %}">Shop All</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
+          <ul class="dropdown-menu">
+            {% for category in nav_categories %}
+              <li><a class="dropdown-item" href="{% url 'catalog:list' %}?category={{ category.pk }}">{{ category.name }}</a></li>
+            {% endfor %}
+          </ul>
+        </li>
+      </ul>
+
+      <form class="d-flex me-lg-3 mb-2 mb-lg-0" action="{% url 'catalog:list' %}" method="get" role="search">
+        <div class="input-group input-group-sm">
+          <input class="form-control" type="search" name="q" placeholder="Search products" value="{{ request.GET.q|default:'' }}" aria-label="Search">
+          <button class="btn btn-outline-secondary" type="submit" aria-label="Search"><i class="bi bi-search"></i></button>
+        </div>
+      </form>
+
+      <ul class="navbar-nav align-items-lg-center">
+        {% if user.is_authenticated %}
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+              <i class="bi bi-person"></i> {{ user.name|truncatechars:16 }}
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end">
+              <li><a class="dropdown-item" href="{% url 'orders:history' %}">My orders</a></li>
+              {% if user.is_staff %}<li><a class="dropdown-item" href="{% url 'admin:index' %}">Admin dashboard</a></li>{% endif %}
+              <li><hr class="dropdown-divider"></li>
+              <li>
+                <form method="post" action="{% url 'accounts:logout' %}">{% csrf_token %}
+                  <button class="dropdown-item" type="submit">Log out</button>
+                </form>
+              </li>
+            </ul>
+          </li>
+        {% else %}
+          <li class="nav-item"><a class="nav-link" href="{% url 'accounts:login' %}"><i class="bi bi-person"></i> Log in</a></li>
+          <li class="nav-item"><a class="nav-link" href="{% url 'accounts:register' %}">Register</a></li>
+        {% endif %}
+        <li class="nav-item">
+          <a class="nav-link position-relative" href="{% url 'cart:detail' %}">
+            <i class="bi bi-bag"></i> Cart
+            {% if cart_count %}<span class="badge rounded-pill text-bg-dark ms-1">{{ cart_count }}</span>{% endif %}
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</nav>
+
+<main class="flex-grow-1">
+  {% if messages %}
+    <div class="container mt-3">
+      {% for message in messages %}
+        <div class="alert alert-{% if message.tags == 'error' %}danger{% else %}{{ message.tags|default:'info' }}{% endif %} alert-dismissible fade show" role="alert">
+          {{ message }}
+          <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+        </div>
+      {% endfor %}
+    </div>
+  {% endif %}
+  {% block content %}{% endblock %}
+</main>
+
+<footer class="site-footer mt-5">
+  <div class="container py-5">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="brand mb-2">LUMIERE</div>
+        <p class="text-secondary small mb-0">Simple, well-made clothing for everyday wear. Shirts, tees, denim, outerwear, dresses and knitwear.</p>
+      </div>
+      <div class="col-6 col-md-3">
+        <h6 class="text-uppercase small fw-semibold">Shop</h6>
+        <ul class="list-unstyled small">
+          {% for category in nav_categories %}
+            <li><a href="{% url 'catalog:list' %}?category={{ category.pk }}">{{ category.name }}</a></li>
+          {% endfor %}
+        </ul>
+      </div>
+      <div class="col-6 col-md-2">
+        <h6 class="text-uppercase small fw-semibold">Account</h6>
+        <ul class="list-unstyled small">
+          <li><a href="{% url 'orders:history' %}">My orders</a></li>
+          <li><a href="{% url 'cart:detail' %}">Cart</a></li>
+          {% if not user.is_authenticated %}<li><a href="{% url 'accounts:register' %}">Create account</a></li>{% endif %}
+        </ul>
+      </div>
+      <div class="col-md-3">
+        <h6 class="text-uppercase small fw-semibold">Customer care</h6>
+        <p class="small text-secondary mb-1"><i class="bi bi-truck me-1"></i> Free standard shipping</p>
+        <p class="small text-secondary mb-1"><i class="bi bi-arrow-repeat me-1"></i> 30-day returns</p>
+        <p class="small text-secondary mb-0"><i class="bi bi-envelope me-1"></i> support@lumiere-clothing.test</p>
+      </div>
+    </div>
+    <hr>
+    <div class="d-flex flex-column flex-sm-row justify-content-between small text-secondary">
+      <span>&copy; 2026 Lumiere Clothing</span>
+      <span>COSC 612 / AIT 624 &middot; Group 4 course project</span>
+    </div>
+  </div>
+</footer>
+
+<script src="{% static 'vendor/bootstrap/bootstrap.bundle.min.js' %}"></script>
+{% block scripts %}{% endblock %}
+</body>
+</html>

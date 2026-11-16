@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Access denied | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-5 text-center">
+  <i class="bi bi-shield-x fs-1 text-secondary"></i>
+  <h1 class="h3 mt-3">Access denied</h1>
+  <p class="text-secondary">This order belongs to another account. You can only view your own orders.</p>
+  <a class="btn btn-dark" href="{% url 'orders:history' %}">Go to my orders</a>
+</div>
+{% endblock %}

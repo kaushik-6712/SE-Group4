@@ -1,0 +1,3205 @@
+[
+  {
+    "model": "catalog.category",
+    "pk": 1,
+    "fields": {
+      "name": "Shirts",
+      "slug": "shirts"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 2,
+    "fields": {
+      "name": "T-Shirts & Polos",
+      "slug": "t-shirts"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 3,
+    "fields": {
+      "name": "Jeans & Trousers",
+      "slug": "jeans-trousers"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 4,
+    "fields": {
+      "name": "Jackets & Coats",
+      "slug": "jackets-coats"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 5,
+    "fields": {
+      "name": "Dresses",
+      "slug": "dresses"
+    }
+  },
+  {
+    "model": "catalog.category",
+    "pk": 6,
+    "fields": {
+      "name": "Knitwear",
+      "slug": "knitwear"
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 1,
+    "fields": {
+      "category": 1,
+      "name": "Buffalo Check Western Shirt",
+      "description": "Brushed cotton flannel in a bold buffalo check, finished with denim yokes and snap-flap chest pockets.",
+      "brand": "Field Studio",
+      "price": "58.00",
+      "image": "products/buffalo-check-western-shirt.jpg",
+      "active": true,
+      "created_at": "2026-09-03T11:00:00-04:00",
+      "updated_at": "2026-09-03T11:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 1,
+    "fields": {
+      "product": 1,
+      "size": "XS",
+      "color": "Red",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 2,
+    "fields": {
+      "product": 1,
+      "size": "S",
+      "color": "Red",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 3,
+    "fields": {
+      "product": 1,
+      "size": "M",
+      "color": "Red",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 4,
+    "fields": {
+      "product": 1,
+      "size": "L",
+      "color": "Red",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 5,
+    "fields": {
+      "product": 1,
+      "size": "XL",
+      "color": "Red",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 6,
+    "fields": {
+      "product": 1,
+      "size": "XS",
+      "color": "Charcoal",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 7,
+    "fields": {
+      "product": 1,
+      "size": "S",
+      "color": "Charcoal",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 8,
+    "fields": {
+      "product": 1,
+      "size": "M",
+      "color": "Charcoal",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 9,
+    "fields": {
+      "product": 1,
+      "size": "L",
+      "color": "Charcoal",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 10,
+    "fields": {
+      "product": 1,
+      "size": "XL",
+      "color": "Charcoal",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 2,
+    "fields": {
+      "category": 1,
+      "name": "Satin Button-Up Shirt",
+      "description": "A fluid satin shirt with a soft point collar and buttoned cuffs. Dresses up with trousers or down with jeans.",
+      "brand": "Atelier North",
+      "price": "64.00",
+      "image": "products/satin-button-up-shirt.jpg",
+      "active": true,
+      "created_at": "2026-09-05T12:00:00-04:00",
+      "updated_at": "2026-09-05T12:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 11,
+    "fields": {
+      "product": 2,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 12,
+    "fields": {
+      "product": 2,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 13,
+    "fields": {
+      "product": 2,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 19
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 14,
+    "fields": {
+      "product": 2,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 15,
+    "fields": {
+      "product": 2,
+      "size": "XL",
+      "color": "Navy",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 16,
+    "fields": {
+      "product": 2,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 17,
+    "fields": {
+      "product": 2,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 18,
+    "fields": {
+      "product": 2,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 19,
+    "fields": {
+      "product": 2,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 20,
+    "fields": {
+      "product": 2,
+      "size": "XL",
+      "color": "Black",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 21,
+    "fields": {
+      "product": 2,
+      "size": "XS",
+      "color": "Cream",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 22,
+    "fields": {
+      "product": 2,
+      "size": "S",
+      "color": "Cream",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 23,
+    "fields": {
+      "product": 2,
+      "size": "M",
+      "color": "Cream",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 24,
+    "fields": {
+      "product": 2,
+      "size": "L",
+      "color": "Cream",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 25,
+    "fields": {
+      "product": 2,
+      "size": "XL",
+      "color": "Cream",
+      "stock_qty": 16
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 3,
+    "fields": {
+      "category": 1,
+      "name": "Short-Sleeve Pocket Shirt",
+      "description": "Lightweight cotton shirt with a chest pocket and a relaxed fit for warm days.",
+      "brand": "Harbor & Co",
+      "price": "44.00",
+      "image": "products/short-sleeve-pocket-shirt.jpg",
+      "active": true,
+      "created_at": "2026-09-07T13:00:00-04:00",
+      "updated_at": "2026-09-07T13:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 26,
+    "fields": {
+      "product": 3,
+      "size": "XS",
+      "color": "Olive",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 27,
+    "fields": {
+      "product": 3,
+      "size": "S",
+      "color": "Olive",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 28,
+    "fields": {
+      "product": 3,
+      "size": "M",
+      "color": "Olive",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 29,
+    "fields": {
+      "product": 3,
+      "size": "L",
+      "color": "Olive",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 30,
+    "fields": {
+      "product": 3,
+      "size": "XL",
+      "color": "Olive",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 31,
+    "fields": {
+      "product": 3,
+      "size": "XS",
+      "color": "Sand",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 32,
+    "fields": {
+      "product": 3,
+      "size": "S",
+      "color": "Sand",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 33,
+    "fields": {
+      "product": 3,
+      "size": "M",
+      "color": "Sand",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 34,
+    "fields": {
+      "product": 3,
+      "size": "L",
+      "color": "Sand",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 35,
+    "fields": {
+      "product": 3,
+      "size": "XL",
+      "color": "Sand",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 36,
+    "fields": {
+      "product": 3,
+      "size": "XS",
+      "color": "White",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 37,
+    "fields": {
+      "product": 3,
+      "size": "S",
+      "color": "White",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 38,
+    "fields": {
+      "product": 3,
+      "size": "M",
+      "color": "White",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 39,
+    "fields": {
+      "product": 3,
+      "size": "L",
+      "color": "White",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 40,
+    "fields": {
+      "product": 3,
+      "size": "XL",
+      "color": "White",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 4,
+    "fields": {
+      "category": 1,
+      "name": "Plaid Flannel Shirt",
+      "description": "Soft yarn-dyed flannel in a navy and white plaid with western-style pockets.",
+      "brand": "Field Studio",
+      "price": "52.00",
+      "image": "products/plaid-flannel-shirt.jpg",
+      "active": true,
+      "created_at": "2026-09-09T14:00:00-04:00",
+      "updated_at": "2026-09-09T14:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 41,
+    "fields": {
+      "product": 4,
+      "size": "XS",
+      "color": "Navy Plaid",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 42,
+    "fields": {
+      "product": 4,
+      "size": "S",
+      "color": "Navy Plaid",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 43,
+    "fields": {
+      "product": 4,
+      "size": "M",
+      "color": "Navy Plaid",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 44,
+    "fields": {
+      "product": 4,
+      "size": "L",
+      "color": "Navy Plaid",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 45,
+    "fields": {
+      "product": 4,
+      "size": "XL",
+      "color": "Navy Plaid",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 46,
+    "fields": {
+      "product": 4,
+      "size": "XS",
+      "color": "Red",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 47,
+    "fields": {
+      "product": 4,
+      "size": "S",
+      "color": "Red",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 48,
+    "fields": {
+      "product": 4,
+      "size": "M",
+      "color": "Red",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 49,
+    "fields": {
+      "product": 4,
+      "size": "L",
+      "color": "Red",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 50,
+    "fields": {
+      "product": 4,
+      "size": "XL",
+      "color": "Red",
+      "stock_qty": 19
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 5,
+    "fields": {
+      "category": 2,
+      "name": "Essential Crew Tee",
+      "description": "Our everyday crew neck tee in midweight combed cotton. Holds its shape wash after wash.",
+      "brand": "Lumiere Basics",
+      "price": "22.00",
+      "image": "products/essential-crew-tee.jpg",
+      "active": true,
+      "created_at": "2026-09-11T15:00:00-04:00",
+      "updated_at": "2026-09-11T15:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 51,
+    "fields": {
+      "product": 5,
+      "size": "XS",
+      "color": "Charcoal",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 52,
+    "fields": {
+      "product": 5,
+      "size": "S",
+      "color": "Charcoal",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 53,
+    "fields": {
+      "product": 5,
+      "size": "M",
+      "color": "Charcoal",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 54,
+    "fields": {
+      "product": 5,
+      "size": "L",
+      "color": "Charcoal",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 55,
+    "fields": {
+      "product": 5,
+      "size": "XL",
+      "color": "Charcoal",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 56,
+    "fields": {
+      "product": 5,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 57,
+    "fields": {
+      "product": 5,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 58,
+    "fields": {
+      "product": 5,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 59,
+    "fields": {
+      "product": 5,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 60,
+    "fields": {
+      "product": 5,
+      "size": "XL",
+      "color": "Black",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 61,
+    "fields": {
+      "product": 5,
+      "size": "XS",
+      "color": "White",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 62,
+    "fields": {
+      "product": 5,
+      "size": "S",
+      "color": "White",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 63,
+    "fields": {
+      "product": 5,
+      "size": "M",
+      "color": "White",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 64,
+    "fields": {
+      "product": 5,
+      "size": "L",
+      "color": "White",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 65,
+    "fields": {
+      "product": 5,
+      "size": "XL",
+      "color": "White",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 6,
+    "fields": {
+      "category": 2,
+      "name": "Garment-Dyed Tee",
+      "description": "Garment-dyed cotton jersey with a lived-in feel and a slightly longer body.",
+      "brand": "Lumiere Basics",
+      "price": "26.00",
+      "image": "products/garment-dyed-tee.jpg",
+      "active": true,
+      "created_at": "2026-09-13T16:00:00-04:00",
+      "updated_at": "2026-09-13T16:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 66,
+    "fields": {
+      "product": 6,
+      "size": "XS",
+      "color": "Sage",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 67,
+    "fields": {
+      "product": 6,
+      "size": "S",
+      "color": "Sage",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 68,
+    "fields": {
+      "product": 6,
+      "size": "M",
+      "color": "Sage",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 69,
+    "fields": {
+      "product": 6,
+      "size": "L",
+      "color": "Sage",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 70,
+    "fields": {
+      "product": 6,
+      "size": "XL",
+      "color": "Sage",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 71,
+    "fields": {
+      "product": 6,
+      "size": "XS",
+      "color": "Light Blue",
+      "stock_qty": 19
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 72,
+    "fields": {
+      "product": 6,
+      "size": "S",
+      "color": "Light Blue",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 73,
+    "fields": {
+      "product": 6,
+      "size": "M",
+      "color": "Light Blue",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 74,
+    "fields": {
+      "product": 6,
+      "size": "L",
+      "color": "Light Blue",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 75,
+    "fields": {
+      "product": 6,
+      "size": "XL",
+      "color": "Light Blue",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 76,
+    "fields": {
+      "product": 6,
+      "size": "XS",
+      "color": "Sand",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 77,
+    "fields": {
+      "product": 6,
+      "size": "S",
+      "color": "Sand",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 78,
+    "fields": {
+      "product": 6,
+      "size": "M",
+      "color": "Sand",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 79,
+    "fields": {
+      "product": 6,
+      "size": "L",
+      "color": "Sand",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 80,
+    "fields": {
+      "product": 6,
+      "size": "XL",
+      "color": "Sand",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 7,
+    "fields": {
+      "category": 2,
+      "name": "Heavyweight Cotton Tee",
+      "description": "A boxy heavyweight tee with a ribbed collar. Built to last.",
+      "brand": "Field Studio",
+      "price": "28.00",
+      "image": "products/heavyweight-cotton-tee.jpg",
+      "active": true,
+      "created_at": "2026-09-15T17:00:00-04:00",
+      "updated_at": "2026-09-15T17:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 81,
+    "fields": {
+      "product": 7,
+      "size": "XS",
+      "color": "Brown",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 82,
+    "fields": {
+      "product": 7,
+      "size": "S",
+      "color": "Brown",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 83,
+    "fields": {
+      "product": 7,
+      "size": "M",
+      "color": "Brown",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 84,
+    "fields": {
+      "product": 7,
+      "size": "L",
+      "color": "Brown",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 85,
+    "fields": {
+      "product": 7,
+      "size": "XL",
+      "color": "Brown",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 86,
+    "fields": {
+      "product": 7,
+      "size": "XS",
+      "color": "Olive",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 87,
+    "fields": {
+      "product": 7,
+      "size": "S",
+      "color": "Olive",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 88,
+    "fields": {
+      "product": 7,
+      "size": "M",
+      "color": "Olive",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 89,
+    "fields": {
+      "product": 7,
+      "size": "L",
+      "color": "Olive",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 90,
+    "fields": {
+      "product": 7,
+      "size": "XL",
+      "color": "Olive",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 91,
+    "fields": {
+      "product": 7,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 92,
+    "fields": {
+      "product": 7,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 93,
+    "fields": {
+      "product": 7,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 94,
+    "fields": {
+      "product": 7,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 95,
+    "fields": {
+      "product": 7,
+      "size": "XL",
+      "color": "Navy",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 8,
+    "fields": {
+      "category": 2,
+      "name": "Tipped Piqu\u00e9 Polo",
+      "description": "Classic cotton piqu\u00e9 polo with contrast tipping on the collar and sleeves.",
+      "brand": "Harbor & Co",
+      "price": "38.00",
+      "image": "products/tipped-pique-polo.jpg",
+      "active": true,
+      "created_at": "2026-09-17T18:00:00-04:00",
+      "updated_at": "2026-09-17T18:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 96,
+    "fields": {
+      "product": 8,
+      "size": "XS",
+      "color": "Burgundy",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 97,
+    "fields": {
+      "product": 8,
+      "size": "S",
+      "color": "Burgundy",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 98,
+    "fields": {
+      "product": 8,
+      "size": "M",
+      "color": "Burgundy",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 99,
+    "fields": {
+      "product": 8,
+      "size": "L",
+      "color": "Burgundy",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 100,
+    "fields": {
+      "product": 8,
+      "size": "XL",
+      "color": "Burgundy",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 101,
+    "fields": {
+      "product": 8,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 102,
+    "fields": {
+      "product": 8,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 103,
+    "fields": {
+      "product": 8,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 104,
+    "fields": {
+      "product": 8,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 105,
+    "fields": {
+      "product": 8,
+      "size": "XL",
+      "color": "Navy",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 9,
+    "fields": {
+      "category": 3,
+      "name": "Straight Fit Jeans",
+      "description": "Five-pocket straight-leg jeans in comfortable stretch denim with a light fade.",
+      "brand": "Lumiere Basics",
+      "price": "69.00",
+      "image": "products/straight-fit-jeans.jpg",
+      "active": true,
+      "created_at": "2026-09-19T19:00:00-04:00",
+      "updated_at": "2026-09-19T19:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 106,
+    "fields": {
+      "product": 9,
+      "size": "28",
+      "color": "Mid Blue",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 107,
+    "fields": {
+      "product": 9,
+      "size": "30",
+      "color": "Mid Blue",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 108,
+    "fields": {
+      "product": 9,
+      "size": "32",
+      "color": "Mid Blue",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 109,
+    "fields": {
+      "product": 9,
+      "size": "34",
+      "color": "Mid Blue",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 110,
+    "fields": {
+      "product": 9,
+      "size": "36",
+      "color": "Mid Blue",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 111,
+    "fields": {
+      "product": 9,
+      "size": "28",
+      "color": "Indigo",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 112,
+    "fields": {
+      "product": 9,
+      "size": "30",
+      "color": "Indigo",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 113,
+    "fields": {
+      "product": 9,
+      "size": "32",
+      "color": "Indigo",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 114,
+    "fields": {
+      "product": 9,
+      "size": "34",
+      "color": "Indigo",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 115,
+    "fields": {
+      "product": 9,
+      "size": "36",
+      "color": "Indigo",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 10,
+    "fields": {
+      "category": 3,
+      "name": "Dark Wash Slim Jeans",
+      "description": "Slim-fit jeans in a clean dark wash. Sharp enough for the office.",
+      "brand": "Atelier North",
+      "price": "84.00",
+      "image": "products/dark-wash-slim-jeans.jpg",
+      "active": true,
+      "created_at": "2026-09-21T20:00:00-04:00",
+      "updated_at": "2026-09-21T20:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 116,
+    "fields": {
+      "product": 10,
+      "size": "28",
+      "color": "Indigo",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 117,
+    "fields": {
+      "product": 10,
+      "size": "30",
+      "color": "Indigo",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 118,
+    "fields": {
+      "product": 10,
+      "size": "32",
+      "color": "Indigo",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 119,
+    "fields": {
+      "product": 10,
+      "size": "34",
+      "color": "Indigo",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 120,
+    "fields": {
+      "product": 10,
+      "size": "36",
+      "color": "Indigo",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 121,
+    "fields": {
+      "product": 10,
+      "size": "28",
+      "color": "Black",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 122,
+    "fields": {
+      "product": 10,
+      "size": "30",
+      "color": "Black",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 123,
+    "fields": {
+      "product": 10,
+      "size": "32",
+      "color": "Black",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 124,
+    "fields": {
+      "product": 10,
+      "size": "34",
+      "color": "Black",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 125,
+    "fields": {
+      "product": 10,
+      "size": "36",
+      "color": "Black",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 11,
+    "fields": {
+      "category": 3,
+      "name": "Cargo Jogger Pants",
+      "description": "Cotton twill joggers with cargo pockets, an elastic waist and cuffed hems.",
+      "brand": "Field Studio",
+      "price": "56.00",
+      "image": "products/cargo-jogger-pants.jpg",
+      "active": true,
+      "created_at": "2026-09-23T21:00:00-04:00",
+      "updated_at": "2026-09-23T21:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 126,
+    "fields": {
+      "product": 11,
+      "size": "28",
+      "color": "Khaki",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 127,
+    "fields": {
+      "product": 11,
+      "size": "30",
+      "color": "Khaki",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 128,
+    "fields": {
+      "product": 11,
+      "size": "32",
+      "color": "Khaki",
+      "stock_qty": 16
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 129,
+    "fields": {
+      "product": 11,
+      "size": "34",
+      "color": "Khaki",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 130,
+    "fields": {
+      "product": 11,
+      "size": "36",
+      "color": "Khaki",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 131,
+    "fields": {
+      "product": 11,
+      "size": "28",
+      "color": "Olive",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 132,
+    "fields": {
+      "product": 11,
+      "size": "30",
+      "color": "Olive",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 133,
+    "fields": {
+      "product": 11,
+      "size": "32",
+      "color": "Olive",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 134,
+    "fields": {
+      "product": 11,
+      "size": "34",
+      "color": "Olive",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 135,
+    "fields": {
+      "product": 11,
+      "size": "36",
+      "color": "Olive",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 136,
+    "fields": {
+      "product": 11,
+      "size": "28",
+      "color": "Black",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 137,
+    "fields": {
+      "product": 11,
+      "size": "30",
+      "color": "Black",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 138,
+    "fields": {
+      "product": 11,
+      "size": "32",
+      "color": "Black",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 139,
+    "fields": {
+      "product": 11,
+      "size": "34",
+      "color": "Black",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 140,
+    "fields": {
+      "product": 11,
+      "size": "36",
+      "color": "Black",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 12,
+    "fields": {
+      "category": 3,
+      "name": "Pleated Wool Trousers",
+      "description": "Single-pleat trousers in a soft wool blend with a turned-up hem.",
+      "brand": "Atelier North",
+      "price": "92.00",
+      "image": "products/pleated-wool-trousers.jpg",
+      "active": true,
+      "created_at": "2026-09-25T22:00:00-04:00",
+      "updated_at": "2026-09-25T22:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 141,
+    "fields": {
+      "product": 12,
+      "size": "28",
+      "color": "Charcoal",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 142,
+    "fields": {
+      "product": 12,
+      "size": "30",
+      "color": "Charcoal",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 143,
+    "fields": {
+      "product": 12,
+      "size": "32",
+      "color": "Charcoal",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 144,
+    "fields": {
+      "product": 12,
+      "size": "34",
+      "color": "Charcoal",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 145,
+    "fields": {
+      "product": 12,
+      "size": "36",
+      "color": "Charcoal",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 146,
+    "fields": {
+      "product": 12,
+      "size": "28",
+      "color": "Navy",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 147,
+    "fields": {
+      "product": 12,
+      "size": "30",
+      "color": "Navy",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 148,
+    "fields": {
+      "product": 12,
+      "size": "32",
+      "color": "Navy",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 149,
+    "fields": {
+      "product": 12,
+      "size": "34",
+      "color": "Navy",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 150,
+    "fields": {
+      "product": 12,
+      "size": "36",
+      "color": "Navy",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 13,
+    "fields": {
+      "category": 4,
+      "name": "Wool Pea Coat",
+      "description": "A double-breasted pea coat in a warm wool blend with a notch lapel.",
+      "brand": "Atelier North",
+      "price": "168.00",
+      "image": "products/wool-pea-coat.jpg",
+      "active": true,
+      "created_at": "2026-09-27T23:00:00-04:00",
+      "updated_at": "2026-09-27T23:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 151,
+    "fields": {
+      "product": 13,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 152,
+    "fields": {
+      "product": 13,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 153,
+    "fields": {
+      "product": 13,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 154,
+    "fields": {
+      "product": 13,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 155,
+    "fields": {
+      "product": 13,
+      "size": "XL",
+      "color": "Navy",
+      "stock_qty": 2
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 156,
+    "fields": {
+      "product": 13,
+      "size": "XS",
+      "color": "Charcoal",
+      "stock_qty": 16
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 157,
+    "fields": {
+      "product": 13,
+      "size": "S",
+      "color": "Charcoal",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 158,
+    "fields": {
+      "product": 13,
+      "size": "M",
+      "color": "Charcoal",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 159,
+    "fields": {
+      "product": 13,
+      "size": "L",
+      "color": "Charcoal",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 160,
+    "fields": {
+      "product": 13,
+      "size": "XL",
+      "color": "Charcoal",
+      "stock_qty": 2
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 161,
+    "fields": {
+      "product": 13,
+      "size": "XS",
+      "color": "Camel",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 162,
+    "fields": {
+      "product": 13,
+      "size": "S",
+      "color": "Camel",
+      "stock_qty": 16
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 163,
+    "fields": {
+      "product": 13,
+      "size": "M",
+      "color": "Camel",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 164,
+    "fields": {
+      "product": 13,
+      "size": "L",
+      "color": "Camel",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 165,
+    "fields": {
+      "product": 13,
+      "size": "XL",
+      "color": "Camel",
+      "stock_qty": 2
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 14,
+    "fields": {
+      "category": 4,
+      "name": "Leather Biker Jacket",
+      "description": "Smooth faux leather biker jacket with an asymmetric zip and zipped pockets.",
+      "brand": "Atelier North",
+      "price": "198.00",
+      "image": "products/leather-biker-jacket.jpg",
+      "active": true,
+      "created_at": "2026-09-30T00:00:00-04:00",
+      "updated_at": "2026-09-30T00:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 166,
+    "fields": {
+      "product": 14,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 167,
+    "fields": {
+      "product": 14,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 168,
+    "fields": {
+      "product": 14,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 169,
+    "fields": {
+      "product": 14,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 170,
+    "fields": {
+      "product": 14,
+      "size": "XL",
+      "color": "Black",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 171,
+    "fields": {
+      "product": 14,
+      "size": "XS",
+      "color": "Brown",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 172,
+    "fields": {
+      "product": 14,
+      "size": "S",
+      "color": "Brown",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 173,
+    "fields": {
+      "product": 14,
+      "size": "M",
+      "color": "Brown",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 174,
+    "fields": {
+      "product": 14,
+      "size": "L",
+      "color": "Brown",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 175,
+    "fields": {
+      "product": 14,
+      "size": "XL",
+      "color": "Brown",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 15,
+    "fields": {
+      "category": 4,
+      "name": "Bomber Jacket",
+      "description": "Lightweight bomber with ribbed trims, a sleeve pocket and a detachable jersey hood.",
+      "brand": "Field Studio",
+      "price": "94.00",
+      "image": "products/bomber-jacket.jpg",
+      "active": true,
+      "created_at": "2026-10-02T01:00:00-04:00",
+      "updated_at": "2026-10-02T01:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 176,
+    "fields": {
+      "product": 15,
+      "size": "XS",
+      "color": "Olive",
+      "stock_qty": 24
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 177,
+    "fields": {
+      "product": 15,
+      "size": "S",
+      "color": "Olive",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 178,
+    "fields": {
+      "product": 15,
+      "size": "M",
+      "color": "Olive",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 179,
+    "fields": {
+      "product": 15,
+      "size": "L",
+      "color": "Olive",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 180,
+    "fields": {
+      "product": 15,
+      "size": "XL",
+      "color": "Olive",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 181,
+    "fields": {
+      "product": 15,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 182,
+    "fields": {
+      "product": 15,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 183,
+    "fields": {
+      "product": 15,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 184,
+    "fields": {
+      "product": 15,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 185,
+    "fields": {
+      "product": 15,
+      "size": "XL",
+      "color": "Black",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 16,
+    "fields": {
+      "category": 4,
+      "name": "Long Puffer Coat",
+      "description": "A knee-length hooded puffer with lightweight insulation that packs down small.",
+      "brand": "Harbor & Co",
+      "price": "176.00",
+      "image": "products/long-puffer-coat.jpg",
+      "active": true,
+      "created_at": "2026-10-04T02:00:00-04:00",
+      "updated_at": "2026-10-04T02:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 186,
+    "fields": {
+      "product": 16,
+      "size": "XS",
+      "color": "Champagne",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 187,
+    "fields": {
+      "product": 16,
+      "size": "S",
+      "color": "Champagne",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 188,
+    "fields": {
+      "product": 16,
+      "size": "M",
+      "color": "Champagne",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 189,
+    "fields": {
+      "product": 16,
+      "size": "L",
+      "color": "Champagne",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 190,
+    "fields": {
+      "product": 16,
+      "size": "XL",
+      "color": "Champagne",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 191,
+    "fields": {
+      "product": 16,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 192,
+    "fields": {
+      "product": 16,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 193,
+    "fields": {
+      "product": 16,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 194,
+    "fields": {
+      "product": 16,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 195,
+    "fields": {
+      "product": 16,
+      "size": "XL",
+      "color": "Black",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 17,
+    "fields": {
+      "category": 5,
+      "name": "Relaxed Shift Dress",
+      "description": "An easy cotton shift dress with three-quarter sleeves and a split neckline.",
+      "brand": "Harbor & Co",
+      "price": "72.00",
+      "image": "products/relaxed-shift-dress.jpg",
+      "active": true,
+      "created_at": "2026-10-06T03:00:00-04:00",
+      "updated_at": "2026-10-06T03:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 196,
+    "fields": {
+      "product": 17,
+      "size": "XS",
+      "color": "Olive",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 197,
+    "fields": {
+      "product": 17,
+      "size": "S",
+      "color": "Olive",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 198,
+    "fields": {
+      "product": 17,
+      "size": "M",
+      "color": "Olive",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 199,
+    "fields": {
+      "product": 17,
+      "size": "L",
+      "color": "Olive",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 200,
+    "fields": {
+      "product": 17,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 201,
+    "fields": {
+      "product": 17,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 202,
+    "fields": {
+      "product": 17,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 203,
+    "fields": {
+      "product": 17,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 18,
+    "fields": {
+      "category": 5,
+      "name": "Swing Dress",
+      "description": "A playful A-line swing dress with short sleeves and a relaxed fit.",
+      "brand": "Lumiere Basics",
+      "price": "64.00",
+      "image": "products/swing-dress.jpg",
+      "active": true,
+      "created_at": "2026-10-08T04:00:00-04:00",
+      "updated_at": "2026-10-08T04:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 204,
+    "fields": {
+      "product": 18,
+      "size": "XS",
+      "color": "Tomato",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 205,
+    "fields": {
+      "product": 18,
+      "size": "S",
+      "color": "Tomato",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 206,
+    "fields": {
+      "product": 18,
+      "size": "M",
+      "color": "Tomato",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 207,
+    "fields": {
+      "product": 18,
+      "size": "L",
+      "color": "Tomato",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 208,
+    "fields": {
+      "product": 18,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 209,
+    "fields": {
+      "product": 18,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 19
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 210,
+    "fields": {
+      "product": 18,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 211,
+    "fields": {
+      "product": 18,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 19,
+    "fields": {
+      "category": 5,
+      "name": "Floral Midi Dress",
+      "description": "A fit-and-flare midi dress in a small floral print with elbow-length sleeves.",
+      "brand": "Field Studio",
+      "price": "88.00",
+      "image": "products/floral-midi-dress.jpg",
+      "active": true,
+      "created_at": "2026-10-10T05:00:00-04:00",
+      "updated_at": "2026-10-10T05:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 212,
+    "fields": {
+      "product": 19,
+      "size": "XS",
+      "color": "Floral Print",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 213,
+    "fields": {
+      "product": 19,
+      "size": "S",
+      "color": "Floral Print",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 214,
+    "fields": {
+      "product": 19,
+      "size": "M",
+      "color": "Floral Print",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 215,
+    "fields": {
+      "product": 19,
+      "size": "L",
+      "color": "Floral Print",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 20,
+    "fields": {
+      "category": 5,
+      "name": "Little Black Dress",
+      "description": "A timeless short-sleeve sheath dress with a fitted waist.",
+      "brand": "Atelier North",
+      "price": "96.00",
+      "image": "products/little-black-dress.jpg",
+      "active": true,
+      "created_at": "2026-10-12T06:00:00-04:00",
+      "updated_at": "2026-10-12T06:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 216,
+    "fields": {
+      "product": 20,
+      "size": "XS",
+      "color": "Black",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 217,
+    "fields": {
+      "product": 20,
+      "size": "S",
+      "color": "Black",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 218,
+    "fields": {
+      "product": 20,
+      "size": "M",
+      "color": "Black",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 219,
+    "fields": {
+      "product": 20,
+      "size": "L",
+      "color": "Black",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 220,
+    "fields": {
+      "product": 20,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 25
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 221,
+    "fields": {
+      "product": 20,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 222,
+    "fields": {
+      "product": 20,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 223,
+    "fields": {
+      "product": 20,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 21,
+    "fields": {
+      "category": 6,
+      "name": "Chunky Rib Turtleneck",
+      "description": "A chunky ribbed turtleneck in a soft wool blend. Made for cold mornings.",
+      "brand": "Field Studio",
+      "price": "98.00",
+      "image": "products/chunky-rib-turtleneck.jpg",
+      "active": true,
+      "created_at": "2026-10-14T07:00:00-04:00",
+      "updated_at": "2026-10-14T07:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 224,
+    "fields": {
+      "product": 21,
+      "size": "XS",
+      "color": "Olive",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 225,
+    "fields": {
+      "product": 21,
+      "size": "S",
+      "color": "Olive",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 226,
+    "fields": {
+      "product": 21,
+      "size": "M",
+      "color": "Olive",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 227,
+    "fields": {
+      "product": 21,
+      "size": "L",
+      "color": "Olive",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 228,
+    "fields": {
+      "product": 21,
+      "size": "XL",
+      "color": "Olive",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 229,
+    "fields": {
+      "product": 21,
+      "size": "XS",
+      "color": "Cream",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 230,
+    "fields": {
+      "product": 21,
+      "size": "S",
+      "color": "Cream",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 231,
+    "fields": {
+      "product": 21,
+      "size": "M",
+      "color": "Cream",
+      "stock_qty": 11
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 232,
+    "fields": {
+      "product": 21,
+      "size": "L",
+      "color": "Cream",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 233,
+    "fields": {
+      "product": 21,
+      "size": "XL",
+      "color": "Cream",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 234,
+    "fields": {
+      "product": 21,
+      "size": "XS",
+      "color": "Charcoal",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 235,
+    "fields": {
+      "product": 21,
+      "size": "S",
+      "color": "Charcoal",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 236,
+    "fields": {
+      "product": 21,
+      "size": "M",
+      "color": "Charcoal",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 237,
+    "fields": {
+      "product": 21,
+      "size": "L",
+      "color": "Charcoal",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 238,
+    "fields": {
+      "product": 21,
+      "size": "XL",
+      "color": "Charcoal",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 22,
+    "fields": {
+      "category": 6,
+      "name": "Merino Crew Sweater",
+      "description": "Fine merino wool crew neck sweater. Light, warm and easy to layer.",
+      "brand": "Atelier North",
+      "price": "88.00",
+      "image": "products/merino-crew-sweater.jpg",
+      "active": true,
+      "created_at": "2026-10-16T08:00:00-04:00",
+      "updated_at": "2026-10-16T08:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 239,
+    "fields": {
+      "product": 22,
+      "size": "XS",
+      "color": "Powder Blue",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 240,
+    "fields": {
+      "product": 22,
+      "size": "S",
+      "color": "Powder Blue",
+      "stock_qty": 5
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 241,
+    "fields": {
+      "product": 22,
+      "size": "M",
+      "color": "Powder Blue",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 242,
+    "fields": {
+      "product": 22,
+      "size": "L",
+      "color": "Powder Blue",
+      "stock_qty": 15
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 243,
+    "fields": {
+      "product": 22,
+      "size": "XL",
+      "color": "Powder Blue",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 244,
+    "fields": {
+      "product": 22,
+      "size": "XS",
+      "color": "Grey",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 245,
+    "fields": {
+      "product": 22,
+      "size": "S",
+      "color": "Grey",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 246,
+    "fields": {
+      "product": 22,
+      "size": "M",
+      "color": "Grey",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 247,
+    "fields": {
+      "product": 22,
+      "size": "L",
+      "color": "Grey",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 248,
+    "fields": {
+      "product": 22,
+      "size": "XL",
+      "color": "Grey",
+      "stock_qty": 20
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 249,
+    "fields": {
+      "product": 22,
+      "size": "XS",
+      "color": "Navy",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 250,
+    "fields": {
+      "product": 22,
+      "size": "S",
+      "color": "Navy",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 251,
+    "fields": {
+      "product": 22,
+      "size": "M",
+      "color": "Navy",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 252,
+    "fields": {
+      "product": 22,
+      "size": "L",
+      "color": "Navy",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 253,
+    "fields": {
+      "product": 22,
+      "size": "XL",
+      "color": "Navy",
+      "stock_qty": 10
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 23,
+    "fields": {
+      "category": 6,
+      "name": "Mock Neck Sweater",
+      "description": "A cosy mock neck sweater with dropped shoulders and ribbed edges.",
+      "brand": "Harbor & Co",
+      "price": "76.00",
+      "image": "products/mock-neck-sweater.jpg",
+      "active": true,
+      "created_at": "2026-10-18T09:00:00-04:00",
+      "updated_at": "2026-10-18T09:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 254,
+    "fields": {
+      "product": 23,
+      "size": "XS",
+      "color": "Rust",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 255,
+    "fields": {
+      "product": 23,
+      "size": "S",
+      "color": "Rust",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 256,
+    "fields": {
+      "product": 23,
+      "size": "M",
+      "color": "Rust",
+      "stock_qty": 7
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 257,
+    "fields": {
+      "product": 23,
+      "size": "L",
+      "color": "Rust",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 258,
+    "fields": {
+      "product": 23,
+      "size": "XL",
+      "color": "Rust",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 259,
+    "fields": {
+      "product": 23,
+      "size": "XS",
+      "color": "Camel",
+      "stock_qty": 17
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 260,
+    "fields": {
+      "product": 23,
+      "size": "S",
+      "color": "Camel",
+      "stock_qty": 6
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 261,
+    "fields": {
+      "product": 23,
+      "size": "M",
+      "color": "Camel",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 262,
+    "fields": {
+      "product": 23,
+      "size": "L",
+      "color": "Camel",
+      "stock_qty": 23
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 263,
+    "fields": {
+      "product": 23,
+      "size": "XL",
+      "color": "Camel",
+      "stock_qty": 16
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 24,
+    "fields": {
+      "category": 6,
+      "name": "Striped Crew Sweater",
+      "description": "A cotton-blend sweater with fine stripes and a half-zip collar.",
+      "brand": "Lumiere Basics",
+      "price": "64.00",
+      "image": "products/striped-crew-sweater.jpg",
+      "active": true,
+      "created_at": "2026-10-20T10:00:00-04:00",
+      "updated_at": "2026-10-20T10:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 264,
+    "fields": {
+      "product": 24,
+      "size": "XS",
+      "color": "Navy Stripe",
+      "stock_qty": 8
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 265,
+    "fields": {
+      "product": 24,
+      "size": "S",
+      "color": "Navy Stripe",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 266,
+    "fields": {
+      "product": 24,
+      "size": "M",
+      "color": "Navy Stripe",
+      "stock_qty": 4
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 267,
+    "fields": {
+      "product": 24,
+      "size": "L",
+      "color": "Navy Stripe",
+      "stock_qty": 19
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 268,
+    "fields": {
+      "product": 24,
+      "size": "XL",
+      "color": "Navy Stripe",
+      "stock_qty": 0
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 269,
+    "fields": {
+      "product": 24,
+      "size": "XS",
+      "color": "Grey",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 270,
+    "fields": {
+      "product": 24,
+      "size": "S",
+      "color": "Grey",
+      "stock_qty": 9
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 271,
+    "fields": {
+      "product": 24,
+      "size": "M",
+      "color": "Grey",
+      "stock_qty": 3
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 272,
+    "fields": {
+      "product": 24,
+      "size": "L",
+      "color": "Grey",
+      "stock_qty": 13
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 273,
+    "fields": {
+      "product": 24,
+      "size": "XL",
+      "color": "Grey",
+      "stock_qty": 14
+    }
+  },
+  {
+    "model": "catalog.product",
+    "pk": 25,
+    "fields": {
+      "category": 2,
+      "name": "Archive Graphic Tee",
+      "description": "Discontinued graphic tee kept for past orders.",
+      "brand": "Lumiere Basics",
+      "price": "18.00",
+      "image": "",
+      "active": false,
+      "created_at": "2026-10-22T11:00:00-04:00",
+      "updated_at": "2026-10-22T11:00:00-04:00"
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 274,
+    "fields": {
+      "product": 25,
+      "size": "XS",
+      "color": "White",
+      "stock_qty": 12
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 275,
+    "fields": {
+      "product": 25,
+      "size": "S",
+      "color": "White",
+      "stock_qty": 22
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 276,
+    "fields": {
+      "product": 25,
+      "size": "M",
+      "color": "White",
+      "stock_qty": 18
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 277,
+    "fields": {
+      "product": 25,
+      "size": "L",
+      "color": "White",
+      "stock_qty": 21
+    }
+  },
+  {
+    "model": "catalog.variant",
+    "pk": 278,
+    "fields": {
+      "product": 25,
+      "size": "XL",
+      "color": "White",
+      "stock_qty": 19
+    }
+  }
+]

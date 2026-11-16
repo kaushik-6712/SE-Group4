@@ -1,0 +1,164 @@
+/* Lumiere – small additions on top of Bootstrap 5 */
+
+body {
+  color: #222;
+}
+
+a {
+  color: #222;
+}
+
+a:hover {
+  color: #8a6d3b;
+}
+
+.topbar {
+  background: #222;
+  color: #f1f1f1;
+  letter-spacing: 0.02em;
+}
+
+.brand {
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 1.45rem;
+  font-weight: 600;
+  letter-spacing: 0.18em;
+}
+
+.navbar .nav-link {
+  color: #333;
+}
+
+/* Use the dark brand color instead of Bootstrap blue */
+.form-check-input:checked {
+  background-color: #222;
+  border-color: #222;
+}
+
+.form-control:focus,
+.form-select:focus,
+.form-check-input:focus {
+  border-color: #888;
+  box-shadow: 0 0 0 0.2rem rgba(34, 34, 34, 0.12);
+}
+
+.pagination {
+  --bs-pagination-color: #222;
+  --bs-pagination-active-bg: #222;
+  --bs-pagination-active-border-color: #222;
+}
+
+/* Bootstrap has no 4:5 ratio built in */
+.ratio-4x5 {
+  --bs-aspect-ratio: 125%;
+}
+
+.ratio > img {
+  object-fit: cover;
+}
+
+/* Home */
+.hero {
+  background: #f3f1ed;
+}
+
+.category-tile {
+  text-decoration: none;
+}
+
+.category-tile img,
+.product-img {
+  background: #f3f1ed;
+  border-radius: 6px;
+  overflow: hidden;
+}
+
+.category-tile:hover img,
+.product-card:hover img {
+  opacity: 0.88;
+}
+
+/* Product cards */
+.product-card .product-name {
+  color: #222;
+  text-decoration: none;
+  font-weight: 500;
+}
+
+.product-card .sold-out {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  width: auto;
+  height: auto;
+}
+
+.dot {
+  display: inline-block;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  vertical-align: -1px;
+}
+
+.color-dots .dot {
+  margin-left: 3px;
+}
+
+/* Product page */
+.option-btn {
+  min-width: 48px;
+}
+
+.qty-input {
+  width: 80px;
+}
+
+/* Shop filters */
+.filter-card {
+  position: sticky;
+  top: 90px;
+}
+
+/* Cart and orders */
+.cart-thumb {
+  width: 64px;
+  height: 80px;
+  object-fit: cover;
+  background: #f3f1ed;
+}
+
+.summary-thumb {
+  width: 52px;
+  height: 65px;
+  object-fit: cover;
+  background: #f3f1ed;
+}
+
+.status-pending { background: #fff3cd; color: #7a5a00; }
+.status-processing { background: #cfe2ff; color: #084298; }
+.status-shipped { background: #e2d9f3; color: #432874; }
+.status-delivered { background: #d1e7dd; color: #0f5132; }
+.status-cancelled { background: #e9ecef; color: #495057; }
+
+/* Footer */
+.site-footer {
+  background: #f7f7f5;
+  border-top: 1px solid #e5e5e5;
+}
+
+.site-footer a {
+  color: #555;
+  text-decoration: none;
+}
+
+.site-footer a:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 991.98px) {
+  .filter-card {
+    position: static;
+  }
+}

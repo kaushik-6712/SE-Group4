@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% block title %}Product not available | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-5 text-center">
+  <i class="bi bi-bag-x fs-1 text-secondary"></i>
+  <h1 class="h3 mt-3">Product no longer available</h1>
+  <p class="text-secondary">This item has been removed from the catalog or does not exist.</p>
+  <a class="btn btn-dark" href="{% url 'catalog:list' %}">Back to the shop</a>
+</div>
+{% endblock %}

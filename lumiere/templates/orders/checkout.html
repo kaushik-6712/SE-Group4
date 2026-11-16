@@ -1,0 +1,82 @@
+{% extends "base.html" %}
+{% load lumiere %}
+{% block title %}Checkout | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1 class="h3 mb-4">Checkout</h1>
+
+  <form method="post" novalidate>
+    {% csrf_token %}
+    <div class="row g-4">
+      <div class="col-lg-7">
+        <div class="card mb-4">
+          <div class="card-header bg-white fw-semibold">1. Shipping address</div>
+          <div class="card-body">
+            {% for address in addresses %}
+              <div class="form-check mb-2">
+                <input class="form-check-input" type="radio" name="address_choice" id="addr-{{ address.pk }}" value="{{ address.pk }}" {% if address_choice == address.pk|stringformat:"s" %}checked{% endif %}>
+                <label class="form-check-label" for="addr-{{ address.pk }}">{{ address.street }}, {{ address.city }}, {{ address.state }} {{ address.postal_code }}</label>
+              </div>
+            {% endfor %}
+            {% if addresses %}
+              <div class="form-check mb-3">
+                <input class="form-check-input" type="radio" name="address_choice" id="addr-new" value="new" {% if address_choice == "new" %}checked{% endif %}>
+                <label class="form-check-label" for="addr-new">Ship to a new address</label>
+              </div>
+            {% else %}
+              <input type="hidden" name="address_choice" value="new">
+            {% endif %}
+
+            <div class="row g-3">
+              {% for field in address_form %}
+                <div class="{% if field.name == 'street' %}col-12{% else %}col-md-6{% endif %}">
+                  <label class="form-label small" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                  {{ field|bs }}
+                  {% for error in field.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+                </div>
+              {% endfor %}
+            </div>
+          </div>
+        </div>
+
+        <div class="card">
+          <div class="card-header bg-white fw-semibold">2. Payment</div>
+          <div class="card-body">
+            <p class="small text-secondary">Payment is processed by our payment provider in test mode. Lumiere never receives or stores card numbers.</p>
+            {% for value, label in payment_methods %}
+              <div class="form-check border rounded p-3 ps-5 mb-2">
+                <input class="form-check-input" type="radio" name="payment_method" id="pay-{{ forloop.counter }}" value="{{ value }}" {% if value == payment_method %}checked{% endif %}>
+                <label class="form-check-label" for="pay-{{ forloop.counter }}"><i class="bi bi-credit-card me-1"></i> {{ label }}</label>
+              </div>
+            {% endfor %}
+          </div>
+        </div>
+      </div>
+
+      <div class="col-lg-5">
+        <div class="card">
+          <div class="card-body">
+            <h2 class="h5 mb-3">Your order</h2>
+            {% for item in items %}
+              <div class="d-flex align-items-center gap-3 mb-3">
+                <img src="{{ item.variant.product.image_url }}" alt="" class="summary-thumb rounded">
+                <div class="flex-grow-1 small">
+                  <div class="fw-semibold">{{ item.variant.product.name }}</div>
+                  <div class="text-secondary">Size {{ item.variant.size }} &middot; {{ item.variant.color }} &middot; Qty {{ item.quantity }}</div>
+                </div>
+                <div class="small fw-semibold">${{ item.line_total }}</div>
+              </div>
+            {% endfor %}
+            <hr>
+            <div class="d-flex justify-content-between mb-2"><span>Subtotal</span><span>${{ subtotal }}</span></div>
+            <div class="d-flex justify-content-between mb-2 text-secondary"><span>Shipping</span><span>Free</span></div>
+            <div class="d-flex justify-content-between fw-semibold fs-5 mb-3"><span>Total</span><span>${{ subtotal }}</span></div>
+            <button class="btn btn-dark w-100" type="submit"><i class="bi bi-lock me-1"></i> Place order</button>
+            <a class="btn btn-link btn-sm w-100 text-secondary" href="{% url 'cart:detail' %}">Back to cart</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </form>
+</div>
+{% endblock %}

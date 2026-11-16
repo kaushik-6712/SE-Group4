@@ -1,0 +1,31 @@
+{% extends "base.html" %}
+{% load lumiere %}
+{% block title %}Log in | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-5">
+  <div class="row justify-content-center">
+    <div class="col-md-6 col-lg-4">
+      <div class="card shadow-sm">
+        <div class="card-body p-4">
+          <h1 class="h4 mb-1">Log in</h1>
+          <p class="text-secondary small mb-4">Welcome back. Log in to see your cart and orders.</p>
+          <form method="post" novalidate>
+            {% csrf_token %}
+            <input type="hidden" name="next" value="{{ next }}">
+            {% for error in form.non_field_errors %}<div class="alert alert-danger py-2 small">{{ error }}</div>{% endfor %}
+            {% for field in form %}
+              <div class="mb-3">
+                <label class="form-label small" for="{{ field.id_for_label }}">{{ field.label }}</label>
+                {{ field|bs }}
+                {% for error in field.errors %}<div class="invalid-feedback">{{ error }}</div>{% endfor %}
+              </div>
+            {% endfor %}
+            <button class="btn btn-dark w-100" type="submit">Log in</button>
+          </form>
+          <p class="small text-center mt-3 mb-0">New here? <a href="{% url 'accounts:register' %}{% if next %}?next={{ next|urlencode }}{% endif %}">Create an account</a></p>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+{% endblock %}

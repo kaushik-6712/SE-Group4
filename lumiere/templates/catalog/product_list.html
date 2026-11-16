@@ -1,0 +1,113 @@
+{% extends "base.html" %}
+{% load lumiere %}
+{% block title %}{% if selected_category %}{{ selected_category.name }}{% else %}Shop All{% endif %} | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb small">
+      <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">Home</a></li>
+      {% if selected_category %}
+        <li class="breadcrumb-item"><a href="{% url 'catalog:list' %}">Shop</a></li>
+        <li class="breadcrumb-item active" aria-current="page">{{ selected_category.name }}</li>
+      {% else %}
+        <li class="breadcrumb-item active" aria-current="page">Shop</li>
+      {% endif %}
+    </ol>
+  </nav>
+
+  <h1 class="h3 mb-3">
+    {% if selected_category %}{{ selected_category.name }}{% elif keyword %}Results for "{{ keyword }}"{% else %}Shop All{% endif %}
+  </h1>
+
+  {% if form_errors %}
+    <div class="alert alert-danger" role="alert">
+      {% for error in form_errors %}<div>{{ error }}</div>{% endfor %}
+    </div>
+  {% endif %}
+
+  <div class="row g-4">
+    <aside class="col-lg-3">
+      <form id="filter-form" method="get" class="card card-body filter-card">
+        <h2 class="h6 mb-3">Filter</h2>
+        <div class="mb-3">
+          <label class="form-label small" for="f-q">Keyword</label>
+          <input class="form-control form-control-sm" id="f-q" type="text" name="q" value="{{ request.GET.q|default:'' }}">
+        </div>
+        <div class="mb-3">
+          <label class="form-label small" for="f-cat">Category</label>
+          <select class="form-select form-select-sm" id="f-cat" name="category">
+            <option value="">All categories</option>
+            {% for category in categories %}
+              <option value="{{ category.pk }}" {% if category.pk|stringformat:"s" == request.GET.category %}selected{% endif %}>{{ category.name }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label small" for="f-size">Size</label>
+          <select class="form-select form-select-sm" id="f-size" name="size">
+            <option value="">Any size</option>
+            {% for size in sizes %}<option {% if size == request.GET.size %}selected{% endif %}>{{ size }}</option>{% endfor %}
+          </select>
+        </div>
+        <div class="mb-3">
+          <label class="form-label small" for="f-color">Color</label>
+          <select class="form-select form-select-sm" id="f-color" name="color">
+            <option value="">Any color</option>
+            {% for color in colors %}<option {% if color == request.GET.color %}selected{% endif %}>{{ color }}</option>{% endfor %}
+          </select>
+        </div>
+        <label class="form-label small">Price ($)</label>
+        <div class="row g-2 mb-3">
+          <div class="col"><input class="form-control form-control-sm" type="number" step="0.01" name="min_price" placeholder="Min" value="{{ request.GET.min_price|default:'' }}" aria-label="Minimum price"></div>
+          <div class="col"><input class="form-control form-control-sm" type="number" step="0.01" name="max_price" placeholder="Max" value="{{ request.GET.max_price|default:'' }}" aria-label="Maximum price"></div>
+        </div>
+        <button class="btn btn-dark btn-sm w-100" type="submit">Apply filters</button>
+        <a class="btn btn-link btn-sm w-100 text-secondary" href="{% url 'catalog:list' %}">Clear all</a>
+      </form>
+    </aside>
+
+    <section class="col-lg-9">
+      <div class="d-flex justify-content-between align-items-center mb-3">
+        <span class="text-secondary small">{{ result_count }} product{{ result_count|pluralize }}</span>
+        <div class="d-flex align-items-center gap-2">
+          <label class="small text-secondary text-nowrap" for="f-sort">Sort by</label>
+          <select class="form-select form-select-sm" id="f-sort" name="sort" form="filter-form" onchange="this.form.submit()">
+            {% for value, label in sort_choices %}<option value="{{ value }}" {% if value == request.GET.sort %}selected{% endif %}>{{ label }}</option>{% endfor %}
+          </select>
+        </div>
+      </div>
+
+      {% if page_obj.object_list %}
+        <div class="row g-4">
+          {% for product in page_obj %}
+            <div class="col-6 col-md-4">{% include "catalog/_product_card.html" %}</div>
+          {% endfor %}
+        </div>
+
+        {% if page_obj.paginator.num_pages > 1 %}
+          <nav class="mt-4" aria-label="Pages">
+            <ul class="pagination pagination-sm justify-content-center">
+              <li class="page-item {% if not page_obj.has_previous %}disabled{% endif %}">
+                <a class="page-link" href="{% if page_obj.has_previous %}{% page_url page_obj.previous_page_number %}{% else %}#{% endif %}">Previous</a>
+              </li>
+              {% for n in page_obj.paginator.page_range %}
+                <li class="page-item {% if n == page_obj.number %}active{% endif %}"><a class="page-link" href="{% page_url n %}">{{ n }}</a></li>
+              {% endfor %}
+              <li class="page-item {% if not page_obj.has_next %}disabled{% endif %}">
+                <a class="page-link" href="{% if page_obj.has_next %}{% page_url page_obj.next_page_number %}{% else %}#{% endif %}">Next</a>
+              </li>
+            </ul>
+          </nav>
+        {% endif %}
+      {% else %}
+        <div class="text-center border rounded py-5">
+          <i class="bi bi-search fs-2 text-secondary"></i>
+          <h2 class="h5 mt-2">No products found</h2>
+          <p class="text-secondary">Nothing matches your search or filters. Try removing a filter.</p>
+          <a class="btn btn-outline-dark btn-sm" href="{% url 'catalog:list' %}">Clear filters</a>
+        </div>
+      {% endif %}
+    </section>
+  </div>
+</div>
+{% endblock %}

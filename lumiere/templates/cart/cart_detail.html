@@ -1,0 +1,81 @@
+{% extends "base.html" %}
+{% block title %}Shopping cart | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <h1 class="h3 mb-4">Shopping cart</h1>
+
+  {% if rows %}
+  <div class="row g-4">
+    <div class="col-lg-8">
+      <div class="table-responsive">
+        <table class="table align-middle cart-table">
+          <thead class="small text-secondary">
+            <tr><th colspan="2">Product</th><th>Price</th><th>Quantity</th><th class="text-end">Total</th><th></th></tr>
+          </thead>
+          <tbody>
+            {% for row in rows %}
+              {% with item=row.item %}
+              <tr>
+                <td style="width:80px">
+                  <a href="{% url 'catalog:detail' item.variant.product_id %}">
+                    <img src="{{ item.variant.product.image_url }}" alt="{{ item.variant.product.name }}" class="cart-thumb rounded">
+                  </a>
+                </td>
+                <td>
+                  <a href="{% url 'catalog:detail' item.variant.product_id %}" class="fw-semibold text-dark text-decoration-none">{{ item.variant.product.name }}</a>
+                  <div class="small text-secondary">Size {{ item.variant.size }} &middot; {{ item.variant.color }}</div>
+                  {% for text, blocking in row.notes %}
+                    <div class="small {% if blocking %}text-danger{% else %}text-warning-emphasis{% endif %}">{{ text }}</div>
+                  {% endfor %}
+                </td>
+                <td>${{ item.unit_price }}</td>
+                <td>
+                  <form method="post" action="{% url 'cart:update' item.pk %}" class="d-flex gap-1">
+                    {% csrf_token %}
+                    <input type="number" name="quantity" value="{{ item.quantity }}" min="1" class="form-control form-control-sm qty-input" aria-label="Quantity">
+                    <button class="btn btn-outline-secondary btn-sm" type="submit">Update</button>
+                  </form>
+                </td>
+                <td class="text-end fw-semibold">${{ item.line_total }}</td>
+                <td class="text-end">
+                  <form method="post" action="{% url 'cart:remove' item.pk %}">{% csrf_token %}
+                    <button class="btn btn-link btn-sm text-secondary p-0" type="submit" title="Remove"><i class="bi bi-trash"></i><span class="visually-hidden">Remove</span></button>
+                  </form>
+                </td>
+              </tr>
+              {% endwith %}
+            {% endfor %}
+          </tbody>
+        </table>
+      </div>
+      <a href="{% url 'catalog:list' %}" class="small"><i class="bi bi-arrow-left"></i> Continue shopping</a>
+    </div>
+
+    <div class="col-lg-4">
+      <div class="card">
+        <div class="card-body">
+          <h2 class="h5 card-title mb-3">Order summary</h2>
+          <div class="d-flex justify-content-between mb-2"><span>Subtotal</span><span>${{ subtotal }}</span></div>
+          <div class="d-flex justify-content-between mb-2 text-secondary"><span>Shipping</span><span>Free</span></div>
+          <hr>
+          <div class="d-flex justify-content-between fw-semibold fs-5 mb-3"><span>Total</span><span>${{ subtotal }}</span></div>
+          {% if has_blocking_issue %}
+            <div class="alert alert-danger small py-2">Please fix the items marked in red before checkout.</div>
+            <button class="btn btn-dark w-100" disabled>Proceed to checkout</button>
+          {% else %}
+            <a class="btn btn-dark w-100" href="{% url 'orders:checkout' %}">Proceed to checkout</a>
+          {% endif %}
+        </div>
+      </div>
+    </div>
+  </div>
+  {% else %}
+    <div class="text-center border rounded py-5">
+      <i class="bi bi-bag fs-1 text-secondary"></i>
+      <h2 class="h5 mt-2">Your cart is empty</h2>
+      <p class="text-secondary">Browse the shop and add something you like.</p>
+      <a class="btn btn-dark" href="{% url 'catalog:list' %}">Start shopping</a>
+    </div>
+  {% endif %}
+</div>
+{% endblock %}

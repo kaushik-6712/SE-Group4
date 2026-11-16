@@ -1,0 +1,161 @@
+{% extends "base.html" %}
+{% load lumiere %}
+{% block title %}{{ product.name }} | Lumiere{% endblock %}
+{% block content %}
+<div class="container py-4">
+  <nav aria-label="breadcrumb">
+    <ol class="breadcrumb small">
+      <li class="breadcrumb-item"><a href="{% url 'catalog:home' %}">Home</a></li>
+      <li class="breadcrumb-item"><a href="{% url 'catalog:list' %}?category={{ product.category_id }}">{{ product.category.name }}</a></li>
+      <li class="breadcrumb-item active" aria-current="page">{{ product.name }}</li>
+    </ol>
+  </nav>
+
+  <div class="row g-5">
+    <div class="col-md-6">
+      <div class="product-img ratio ratio-4x5 rounded">
+        <img src="{{ product.image_url }}" alt="{{ product.name }}">
+      </div>
+    </div>
+
+    <div class="col-md-6">
+      <div class="text-secondary small">{{ product.brand }}</div>
+      <h1 class="h2 mb-2">{{ product.name }}</h1>
+      <p class="fs-4 mb-3">${{ product.price }}</p>
+      <p class="text-secondary">{{ product.description }}</p>
+
+      <form method="post" action="{% url 'cart:add' %}" id="add-form" class="mt-4">
+        {% csrf_token %}
+        <input type="hidden" name="product_id" value="{{ product.pk }}">
+
+        <div class="mb-3">
+          <div class="fw-semibold small mb-2">Size</div>
+          <div class="d-flex flex-wrap gap-2">
+            {% for size in sizes %}
+              <input type="radio" class="btn-check" name="size" id="size-{{ forloop.counter }}" value="{{ size }}" autocomplete="off" required>
+              <label class="btn btn-outline-dark btn-sm option-btn" for="size-{{ forloop.counter }}">{{ size }}</label>
+            {% endfor %}
+          </div>
+        </div>
+
+        <div class="mb-3">
+          <div class="fw-semibold small mb-2">Color</div>
+          <div class="d-flex flex-wrap gap-2">
+            {% for color in colors %}
+              <input type="radio" class="btn-check" name="color" id="color-{{ forloop.counter }}" value="{{ color }}" autocomplete="off" required>
+              <label class="btn btn-outline-dark btn-sm option-btn" for="color-{{ forloop.counter }}">
+                <span class="dot me-1" style="background:{{ color|swatch }}"></span>{{ color }}
+              </label>
+            {% endfor %}
+          </div>
+        </div>
+
+        <p id="stock-status" class="small text-secondary mb-3">Select a size and color to check availability.</p>
+
+        <div class="d-flex gap-2 align-items-end">
+          <div>
+            <label class="form-label small mb-1" for="qty">Qty</label>
+            <input type="number" class="form-control qty-input" name="quantity" id="qty" value="1" min="1">
+          </div>
+          <button class="btn btn-dark flex-grow-1" type="submit" id="add-btn"><i class="bi bi-bag-plus me-1"></i> Add to cart</button>
+        </div>
+      </form>
+
+      <ul class="list-unstyled small text-secondary mt-4 mb-4">
+        <li class="mb-1"><i class="bi bi-truck me-2"></i>Free standard shipping</li>
+        <li><i class="bi bi-arrow-repeat me-2"></i>Free returns within 30 days</li>
+      </ul>
+
+      <div class="accordion" id="productInfo">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#availability" aria-expanded="false" aria-controls="availability">
+              Availability by size and color
+            </button>
+          </h2>
+          <div id="availability" class="accordion-collapse collapse" data-bs-parent="#productInfo">
+            <div class="accordion-body p-0">
+              <table class="table table-sm mb-0 small">
+                <thead><tr><th class="ps-3">Color</th><th>Size</th><th>Status</th></tr></thead>
+                <tbody>
+                  {% for v in variants %}
+                    <tr>
+                      <td class="ps-3"><span class="dot me-1" style="background:{{ v.color|swatch }}"></span>{{ v.color }}</td>
+                      <td>{{ v.size }}</td>
+                      <td>{% if v.stock_qty > 0 %}<span class="text-success">In stock</span>{% else %}<span class="text-danger">Out of stock</span>{% endif %}</td>
+                    </tr>
+                  {% endfor %}
+                </tbody>
+              </table>
+            </div>
+          </div>
+        </div>
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#shipping" aria-expanded="false" aria-controls="shipping">
+              Shipping and returns
+            </button>
+          </h2>
+          <div id="shipping" class="accordion-collapse collapse" data-bs-parent="#productInfo">
+            <div class="accordion-body small text-secondary">
+              Orders ship within 2 business days. Unworn items can be returned within 30 days of delivery.
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  {% if related %}
+    <section class="mt-5 pt-3">
+      <h2 class="h4 mb-3">You may also like</h2>
+      <div class="row g-4">
+        {% for product in related %}
+          <div class="col-6 col-md-3">{% include "catalog/_product_card.html" %}</div>
+        {% endfor %}
+      </div>
+    </section>
+  {% endif %}
+</div>
+{{ variants_json|json_script:"variants-data" }}
+{% endblock %}
+
+{% block scripts %}
+<script>
+  // Show stock for the chosen size + color and stop out-of-stock items being added.
+  (function () {
+    var variants = JSON.parse(document.getElementById("variants-data").textContent);
+    var form = document.getElementById("add-form");
+    var status = document.getElementById("stock-status");
+    var button = document.getElementById("add-btn");
+    var qty = document.getElementById("qty");
+
+    function update() {
+      var size = form.querySelector("input[name=size]:checked");
+      var color = form.querySelector("input[name=color]:checked");
+      if (!size || !color) {
+        status.textContent = "Select a size and color to check availability.";
+        status.className = "small text-secondary mb-3";
+        button.disabled = false;
+        return;
+      }
+      var match = variants.find(function (v) { return v.size === size.value && v.color === color.value; });
+      if (!match) {
+        status.textContent = "This size and color combination is not available.";
+        status.className = "small text-danger mb-3";
+        button.disabled = true;
+      } else if (match.stock === 0) {
+        status.textContent = "Out of stock in " + match.size + " / " + match.color + ".";
+        status.className = "small text-danger mb-3";
+        button.disabled = true;
+      } else {
+        status.textContent = (match.stock <= 5 ? "Only " + match.stock + " left" : "In stock") + " in " + match.size + " / " + match.color + ".";
+        status.className = "small text-success mb-3";
+        button.disabled = false;
+        qty.max = match.stock;
+      }
+    }
+    form.addEventListener("change", update);
+  })();
+</script>
+{% endblock %}
